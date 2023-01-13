@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <title>Todo목록앱</title>
+</head>
+<body>
+  <div class="container">
+    <h1>TODO목록 앱</h1>
+    <p>
+      <a href=""><i class="bi-plus"> </i>Add Todo</a>
+      <a href="" class="btn btn-primary" style="float:right">완료한 TODO목록</a>
+    </p>
+    <ul class="list-group">
+      {% for todo in todos %}
+      <li class="list-group-item">
+        <a href="">{{ todo.title }}</a>
+        {% if todo.important %}
+          <span class="badge badge-danger">!</span>
+        {% endif %}
+        <div style="float:right">
+          <a href="" class="btn btn-danger">완료</a>
+          <a href="" class="btn btn-outline-primary">수정하기</a>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>
